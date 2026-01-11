@@ -1535,6 +1535,7 @@ span.error{
     color: rgb(51 51 51 / 60%);
     border-bottom: 1px solid #e7e7e7;
     background: url(../images/plan-check.png) no-repeat 0% 6px;
+    font-size: 18px;
 }
 .generic-list2 ul li:last-child{
     border: none;
