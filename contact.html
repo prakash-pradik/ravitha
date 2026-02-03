@@ -147,14 +147,14 @@
             <div class="contact-box2 w-100 float-left">
                 <div class="contact-form">
                     <h2 data-aos="fade-up" data-aos-duration="600">Nehmen Sie Kontakt auf</h2>
-                    <form data-aos="fade-up" data-aos-duration="600" action="send-mail.php" method="post" id="contactpage">
+                    <form data-aos="fade-up" data-aos-duration="600" id="contactForm">
                         <ul class="list-unstyled">
                             <li>
                                 <div class="input-field">
                                     <div class="input-field-icon position-relative d-inline-block">
                                         <img src="assets/images/form-user-icon.png" alt="form-user-icon">
                                     </div>
-                                    <input type="text" placeholder="Ihr Name" name="fname" id="fname">
+                                    <input type="text" placeholder="Ihr Name" name="name" id="name" required>
                                 </div>
                             </li>
                             <li>
@@ -162,7 +162,7 @@
                                     <div class="input-field-icon position-relative d-inline-block">
                                         <img src="assets/images/form-email-icon.png" alt="form-email">
                                     </div>
-                                    <input type="email" placeholder="Ihre E-Mail" name="email" id="email">
+                                    <input type="email" placeholder="Ihre E-Mail" name="email" id="email" required>
                                 </div>
                             </li>
                             <li>
@@ -170,7 +170,7 @@
                                     <div class="input-field-icon position-relative d-inline-block">
                                         <img src="assets/images/form-tel-icon.png" alt="form-tel-icon">
                                     </div>
-                                    <input type="tel" placeholder="Ihr Telefon" name="phone" id="phone">
+                                    <input type="tel" placeholder="Ihr Telefon" maxlength="10" name="phone" id="phone" required>
                                 </div>
                             </li>
                             <li>
@@ -178,11 +178,16 @@
                                     <div class="input-field-icon position-relative d-inline-block">
                                         <img src="assets/images/form-plane-icon.png" alt="form-plane-icon">
                                     </div>
-                                    <textarea placeholder="Nachricht" name="subject" id="subject"></textarea>
+                                    <textarea placeholder="Nachricht" name="message" id="message" required></textarea>
                                 </div>
                             </li>
                         </ul>
-                        <button class="contact-submit-btn" id="submit" type="submit">Schicken</button>
+                        <button class="contact-submit-btn" id="sendBtn" type="submit">
+                            <span class="btn-text">Schicken</span>
+                            <span class="spinner"><i class="fas fa-spinner fa-spin" ></i></span>
+                        </button>
+
+                        <p id="formMsg"></p>
                     </form>
                 </div>
                 <div class="contact-info">
@@ -260,9 +265,16 @@
                         <span class="d-block">Abonnieren Sie unseren Newsletter, um die neuesten <br>Informationen zu erhalten.</span>
                     </div>
                 </div>
+                
                 <div class="news-letter-input">
-                    <input type="email" placeholder="E-Mail-Adresse...">
-                    <button type="submit">Abonnieren</button>
+                    <form id="newsletterForm">
+                        <input type="email" name="email" placeholder="E-Mail-Adresse..." required>
+                        <button type="submit" id="subscribeBtn">
+                            <span class="btn-text">Abonnieren</span>
+                            <span class="spinner"><i class="fas fa-spinner fa-spin" ></i></span>
+                        </button>
+                        <p id="successMsg"></p>
+                    </form>
                 </div>
             </div>
         </div>
@@ -304,7 +316,7 @@
                     </ul>
                     <ul class="list-unstyled mb-0 schedule">
                         <li>Sonntag</li>
-<li>08AM - 12PM</li>
+                        <li>08AM - 12PM</li>
                     </ul>
                 </div>
             </div>
@@ -345,6 +357,10 @@
     <script>
         AOS.init();
     </script>
+    <script>
+        
+    </script>
+
 </body>
 
 </html>

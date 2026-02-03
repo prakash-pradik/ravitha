@@ -1747,7 +1747,7 @@ span.error{
     height: 177px;
     display: flex;
 }
-.contact-submit-btn,.post-btn {
+.contact-submit-btn, .contact-submit-btn:hover, .post-btn {
     border: none;
     color: var(--white-color);
     font-size: 16px;
@@ -2322,3 +2322,32 @@ span.error{
     background-color: var(--primary--color);
 }
 /********* FAQ SECTION ****/
+
+#sendBtn{
+    position: relative;
+}
+#sendBtn.loading, #subscribeBtn.loading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+#sendBtn .spinner, #subscribeBtn .spinner {
+  display: none;
+}
+
+#sendBtn.loading .spinner, #subscribeBtn.loading .spinner {
+  display: block;
+}
+
+#sendBtn.loading .btn-text, #subscribeBtn.loading .btn-text {
+  display: none;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+#formMsg, #successMsg {
+  margin-top: 10px;
+  font-size: 14px;
+}

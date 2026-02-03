@@ -381,8 +381,14 @@
                     </div>
                 </div>
                 <div class="news-letter-input">
-                    <input type="email" placeholder="E-Mail-Adresse...">
-                    <button type="submit">Abonnieren</button>
+                    <form id="newsletterForm">
+                        <input type="email" name="email" placeholder="E-Mail-Adresse..." required>
+                        <button type="submit" id="subscribeBtn">
+                            <span class="btn-text">Abonnieren</span>
+                            <span class="spinner"><i class="fas fa-spinner fa-spin" ></i></span>
+                        </button>
+                        <p id="successMsg"></p>
+                    </form>
                 </div>
             </div>
         </div>
