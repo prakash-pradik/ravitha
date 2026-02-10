@@ -147,14 +147,14 @@
             <div class="contact-box2 w-100 float-left">
                 <div class="contact-form">
                     <h2 data-aos="fade-up" data-aos-duration="600">Nehmen Sie Kontakt auf</h2>
-                    <form data-aos="fade-up" data-aos-duration="600" id="contactForm">
+                    <form data-aos="fade-up" data-aos-duration="600" id="contactForm" method="post">
                         <ul class="list-unstyled">
                             <li>
                                 <div class="input-field">
                                     <div class="input-field-icon position-relative d-inline-block">
                                         <img src="assets/images/form-user-icon.png" alt="form-user-icon">
                                     </div>
-                                    <input type="text" placeholder="Ihr Name" name="name" id="name" required>
+                                    <input type="text" placeholder="Ihr Name" name="name" id="name" autocomplete="off" required>
                                 </div>
                             </li>
                             <li>
@@ -162,7 +162,7 @@
                                     <div class="input-field-icon position-relative d-inline-block">
                                         <img src="assets/images/form-email-icon.png" alt="form-email">
                                     </div>
-                                    <input type="email" placeholder="Ihre E-Mail" name="email" id="email" required>
+                                    <input type="email" placeholder="Ihre E-Mail" name="email" id="email" autocomplete="off" required>
                                 </div>
                             </li>
                             <li>
@@ -170,7 +170,7 @@
                                     <div class="input-field-icon position-relative d-inline-block">
                                         <img src="assets/images/form-tel-icon.png" alt="form-tel-icon">
                                     </div>
-                                    <input type="tel" placeholder="Ihr Telefon" maxlength="10" name="phone" id="phone" required>
+                                    <input type="tel" placeholder="Ihr Telefon" maxlength="10" name="phone" id="phone" autocomplete="off" required>
                                 </div>
                             </li>
                             <li>
@@ -178,7 +178,7 @@
                                     <div class="input-field-icon position-relative d-inline-block">
                                         <img src="assets/images/form-plane-icon.png" alt="form-plane-icon">
                                     </div>
-                                    <textarea placeholder="Nachricht" name="message" id="message" required></textarea>
+                                    <textarea placeholder="Nachricht" name="message" id="message" autocomplete="off" required></textarea>
                                 </div>
                             </li>
                         </ul>
@@ -267,8 +267,8 @@
                 </div>
                 
                 <div class="news-letter-input">
-                    <form id="newsletterForm">
-                        <input type="email" name="email" placeholder="E-Mail-Adresse..." required>
+                    <form id="newsletterForm" method="post">
+                        <input type="email" name="sub_email" placeholder="E-Mail-Adresse..." required>
                         <button type="submit" id="subscribeBtn">
                             <span class="btn-text">Abonnieren</span>
                             <span class="spinner"><i class="fas fa-spinner fa-spin" ></i></span>
@@ -358,7 +358,11 @@
         AOS.init();
     </script>
     <script>
-        
+        document.getElementById('phone').addEventListener('input', function (event) {
+            // Replace any character that is NOT a digit (0-9) with an empty string
+            this.value = this.value.replace(/\D/g, ''); 
+        });
+
     </script>
 
 </body>

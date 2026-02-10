@@ -10,20 +10,19 @@ $mail = new PHPMailer(true);
 
 $subject = 'Vielen Dank für Ihre Anmeldung'; // Default subject
 
-$email_to = $_POST['email'];
+$email_to = $_POST['sub_email'];
 
 try {
     $mail->isSMTP();
-    $mail->Host       = 'smtp.gmail.com';
+    $mail->Host       = 'smtp.hostinger.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'dontgiveupfreddie@gmail.com';
-    $mail->Password   = 'sdjwjfebviulmzyf'; // App password
+    $mail->Username   = 'info@ravithareinigung.ch';
+    $mail->Password   = 'Ravitha@2345';
     $mail->SMTPSecure = 'tls';
     $mail->Port       = 587;
 
     $mail->setFrom('info@ravithareinigung.ch', 'Jetzt abonnieren Ravitha');
-    $mail->addAddress('freddielogin@gmail.com'); // receive mail here
-    $mail->addReplyTo($email_to, '');
+    $mail->addAddress($email_to); // receive mail here
 
     $template = file_get_contents("newsletter_template.html");
     $template = str_replace(
